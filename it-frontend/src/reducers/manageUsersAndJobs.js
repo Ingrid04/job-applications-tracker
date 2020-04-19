@@ -5,11 +5,12 @@ import uuid from "uuid";
 
 const reducer = combineReducers({
     users: usersReducer,
-    job_applications: job_applicationsReducer
+    // job_applications: job_applicationsReducer
   });
   export default reducer;
 
-  function usersReducer(state = [], action) {
+  function usersReducer(state = { 
+      users: [] }, action) {
       switch (action.type) {
           case "ADD_USER":
           return [...state, action.user];
