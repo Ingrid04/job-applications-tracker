@@ -5,16 +5,16 @@ export const addUser = user => {
     };
   };
 
-export const addJobApplication = job_application => {
-    return {
-      type: 'ADD_JOB_APPLICATION',
-      job_application
-    };
-};
+// export const addJobApplication = job_application => {
+//     return {
+//       type: 'ADD_JOB_APPLICATION',
+//       job_application
+//     };
+// };
   
-export const removeJobApplication = id => {
-    return {
-      type: 'REMOVE_JOB_APPLICATION',
-      id
-    };
-};
+// export const removeJobApplication = id => {
+//     return {
+//       type: 'REMOVE_JOB_APPLICATION',
+//       id
+//     };
+// };

@@ -5,7 +5,7 @@ import uuid from "uuid";
 
 const reducer = combineReducers({
     users: usersReducer,
-    // job_applications: job_applicationsReducer
+    job_applications: job_applicationsReducer
   });
   export default reducer;
 
@@ -20,3 +20,19 @@ const reducer = combineReducers({
       }
 
   }
+
+  function job_applicationsReducer(state = {
+      job_applications: [] }, action) {
+        // debugger;
+    console.log(state)
+      switch(action.type) {
+          case "ADD_JOB_APPLICATIONS ":
+              return {
+                  ...state,
+                  job_applications: action.payload};
+            //   this is our new redux state
+      default:
+          return state;
+      }
+  }
+  
