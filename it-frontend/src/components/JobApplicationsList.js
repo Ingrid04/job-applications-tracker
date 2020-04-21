@@ -9,7 +9,7 @@ const JobApplicationsList = (props) => {
     //     )
     // })
 
-    console.log(props)
+    // console.log(props)
     return(
         <div>
             {props.job_applications.map(job_application => <li key={job_application.id}>{job_application.date}{job_application.company}</li>)}
