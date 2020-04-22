@@ -12,7 +12,13 @@ export const setCurrentUser = user =>  {
     }
 }
 
-// asynchronous action creators. thunk returns a function, which has as an argument this function, so returns
+export const clearCurrentUser = () => {
+    return {
+        type: "CLEAR_CURRENT_USER"
+    }
+}
+
+// asynchronous action creators. thunk returns an action creator that is a function, which has as an argument this function, so returns
 // an arrow function
 export const login = credentials => {
     console.log(credentials)
@@ -37,6 +43,16 @@ export const login = credentials => {
         };
 }
 
+export const logout = () => {
+    return dispatch => {
+        dispatch(clearCurrentUser())
+        // line above, to clear my action right away, I dont wanna wait for a response from my backend
+        return fetch('http://localhost:3001/api/v1/logout', {
+            credentials: "include",
+            method: "DELETE"
+        })
+    }
+}
 
 export const getCurrentUser = () => {
     console.log("DISPATCHING GET CURRENT USER")
@@ -59,3 +75,4 @@ export const getCurrentUser = () => {
             .catch(console.log)
         };
 }
+
