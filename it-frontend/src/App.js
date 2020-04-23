@@ -23,6 +23,7 @@ class App extends React.Component {
           <NavBar />
             <Route exact path="/login" component={Login} />
             <Route exact path="/" render={() => loggedIn ? <JobApplicationsContainer /> : < Home />} />
+            <Route exact path="/profile" render={() => loggedIn ? <JobApplicationsContainer /> : < Home />} />
             <Route exact path="/job_applications" component={JobApplicationsList} />
         </div>
     );

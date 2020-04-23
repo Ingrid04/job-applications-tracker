@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { updateLoginForm } from '../actions/loginForm.js'
 import { login } from '../actions/currentUser.js'
 
-const Login = ({loginForm, updateLoginForm, login}) => {
+const Login = ({loginForm, updateLoginForm, login, history }) => {
     // this updateLoginForm is not the same than the import, it is a redux version of that function of the action creator,
     // so we can use it as a callback
 
@@ -18,7 +18,7 @@ const Login = ({loginForm, updateLoginForm, login}) => {
 
     const handleSubmit = event => {
         event.preventDefault()
-        login(loginForm)
+        login(loginForm, history)
     }
     return (
         <form onSubmit={handleSubmit}>

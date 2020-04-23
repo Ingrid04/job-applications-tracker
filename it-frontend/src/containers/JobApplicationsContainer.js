@@ -16,7 +16,7 @@ class JobApplicationsContainer extends React.Component {
     render() {
         return(
             <div>
-                APPLICATION CONTAINER
+                MY JOB APPLICATIONS
                 {/* <JobApplicationInput /> */}
                 <JobApplicationsList />
             </div>

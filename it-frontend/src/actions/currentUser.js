@@ -17,7 +17,7 @@ export const clearCurrentUser = () => {
 
 // asynchronous action creators. thunk returns an action creator that is a function, which has as an argument this function, so returns
 // an arrow function
-export const login = credentials => {
+export const login = (credentials, history) => {
     console.log(credentials)
     return(dispatch) => {
            return fetch('http://localhost:3001/api/v1/login', {
@@ -34,8 +34,9 @@ export const login = credentials => {
                     alert(user.error)
                 } else {
                     dispatch({ type: 'SET_CURRENT_USER', user: user })
-                    // dispatch(fetchJobApplications())
+                    dispatch(fetchJobApplications())
                     dispatch(resetLoginForm())
+                    history.push('/profile')
                 }
             })
             .catch(console.log)
@@ -53,7 +54,7 @@ export const logout = () => {
     }
 }
 
-export const getCurrentUser = () => {
+export const getCurrentUser = (history) => {
     console.log("DISPATCHING GET CURRENT USER")
     return(dispatch) => {
             return fetch('http://localhost:3001/api/v1/get_current_user', {
