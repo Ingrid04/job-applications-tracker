@@ -18,7 +18,6 @@ class App extends React.Component {
       <div className="App">
         <NavBar />
         <JobApplicationsContainer />
-        <JobApplicationsList />
       </div>
 
     );

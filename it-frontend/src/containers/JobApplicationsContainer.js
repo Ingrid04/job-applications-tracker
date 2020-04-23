@@ -18,7 +18,7 @@ class JobApplicationsContainer extends React.Component {
             <div>
                 APPLICATION CONTAINER
                 {/* <JobApplicationInput /> */}
-                <JobApplicationsList jobApplications={this.props.jobApplicationsReducer} />
+                <JobApplicationsList />
             </div>
         )
     }
