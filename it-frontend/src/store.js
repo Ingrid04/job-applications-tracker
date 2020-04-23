@@ -1,16 +1,15 @@
 import { createStore, applyMiddleware, compose, combineReducers} from 'redux'
 // compose allows us to combine a couple of different middlewares into one, so we can just pass one argument in the createStore
 // import reducer from "./reducers/manageUsersAndJobs";
-import usersReducer from "./reducers/manageUsersAndJobs"
-import job_applicationsReducer from "./reducers/manageUsersAndJobs"
-import currentUserReducer from "./reducers/manageUsersAndJobs"
+
+import jobApplicationsReducer from "./reducers/jobApplicationsReducer"
+import currentUserReducer from "./reducers/currentUser"
 import loginForm from "./reducers/loginForm"
 import thunk from 'redux-thunk'
 
 const reducer = combineReducers({
-    users: usersReducer,
-    job_applications: job_applicationsReducer,
-    currentUser: currentUserReducer,
+    jobApplicationsReducer,
+    currentUserReducer,
     loginForm
   });
 

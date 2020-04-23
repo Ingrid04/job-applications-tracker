@@ -1,3 +1,6 @@
+import { resetLoginForm } from "./loginForm.js"
+import { fetchJobApplications } from "./fetchJobApplications.js"
+
 // synchronous action creators
 export const setCurrentUser = user =>  {
     // return(dispatch) => {
@@ -36,7 +39,9 @@ export const login = credentials => {
                 if(user.error){
                     alert(user.error)
                 } else {
-                    dispatch({ type: 'SET_CURRENT_USER', user: user})
+                    dispatch({ type: 'SET_CURRENT_USER', user: user })
+                    // dispatch(fetchJobApplications())
+                    dispatch(resetLoginForm())
                 }
             })
             .catch(console.log)
@@ -70,6 +75,7 @@ export const getCurrentUser = () => {
                     alert(user.error)
                 } else {
                     dispatch(setCurrentUser(user))
+                    // dispatch(fetchJobApplications())
                 }
             })
             .catch(console.log)

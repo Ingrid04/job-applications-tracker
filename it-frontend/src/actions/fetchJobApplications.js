@@ -1,16 +1,27 @@
+// export const setMyJobApplications = job_applications => {
+//     return{
+//         type: "SET_MY_JOB_APPLICATIONS",
+//         job_applications
+
+//     }
+// }
+
+
 export const fetchJobApplications = () =>  {
-    return(dispatch) => {
-        dispatch({type: 'LOADING_JOB_APPLICATIONS'});
+    return (dispatch) => {
+        // debugger
+        // dispatch({type: 'LOADING_JOB_APPLICATIONS'});
+        console.log('inside fetch job applications')
         return fetch('http://localhost:3001/api/v1/job_applications', {
             credentials: "include",
             method: 'GET',
             headers: {
                 "Content-Type": "application/json"
             },
-
         })
         .then(resp => {return resp.json()})
-        .then(job_applications => { dispatch({ type: 'ADD_JOB_APPLICATIONS', payload: job_applications})} );
+        // .then(data => console.log(data))
+        .then(job_applications => { dispatch({ type: "ADD_JOB_APPLICATIONS", payload: job_applications})})
     };
 }
 

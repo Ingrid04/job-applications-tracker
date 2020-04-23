@@ -1,11 +1,11 @@
 import React from 'react';
 import './App.css';
 // import fetchJobApplications from './actions/fetchJobApplications'
-// import JobApplicationsContainer from './containers/JobApplicationsContainer'
-import Login from "./components/Login.js"
-import Logout from "./components/Logout.js"
+import JobApplicationsContainer from './containers/JobApplicationsContainer.js'
 import { connect } from 'react-redux';
 import { getCurrentUser } from "./actions/currentUser.js"
+import NavBar from './components/NavBar.js';
+import JobApplicationsList from './components/JobApplicationsList';
 
 class App extends React.Component {
 
@@ -15,21 +15,15 @@ class App extends React.Component {
 
   render() {
     return (
-      // refactor this to a nav bar
-        // this.props.currentUser ? <Logout/> : <Login/>
-      <Login />
+      <div className="App">
+        <NavBar />
+        <JobApplicationsContainer />
+        <JobApplicationsList />
+      </div>
 
     );
   }
 }
 
-// I can do this bc I know the argument is an object, state, coming from Redux.
-// and I know it has a property called currentUser
-// bc this is an object I can grab its properties
-const mapStateToProps = ({currentUser}) => {
-  return {
-    currentUser 
-  }
-}
 
-export default connect(mapStateToProps, { getCurrentUser }) (App);
+export default connect(null, { getCurrentUser }) (App);

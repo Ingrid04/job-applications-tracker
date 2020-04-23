@@ -16,14 +16,16 @@ class JobApplicationsContainer extends React.Component {
     render() {
         return(
             <div>
-                <JobApplicationInput />
-                <JobApplicationsList job_applications={this.props.job_applications}/>
+                APPLICATION CONTAINER
+                {/* <JobApplicationInput /> */}
+                {/* <JobApplicationsList job_applications={this.props.job_applications}/> */}
             </div>
         )
     }
 }
 
-const mapStateToProps = state => {
+const mapStateToProps = (state) => {
+    console.log(state)
     return{
         job_applications: state.job_applications
     }
@@ -34,16 +36,16 @@ const mapStateToProps = state => {
 // mapStateToProps gives us access to see what is already in our store. We have access to this.props.job_applications.
 
 
-const mapDispatchToProps = dispatch => {
-    return {
-      fetchJobApplications: () => dispatch(fetchJobApplications())
-    }
-}
+// const mapDispatchToProps = dispatch => {
+//     return {
+//       fetchJobApplications: () => dispatch(fetchJobApplications())
+//     }
+// }
 
 // with mapDispatchToProps we have access to this.props.fetchJobApplications() which will update our store
 
 
-export default connect(mapStateToProps, mapDispatchToProps) (JobApplicationsContainer);
+export default connect(mapStateToProps,{ fetchJobApplications }) (JobApplicationsContainer);
 
 // we have to pass it to the connect bc our connect is our way of connecting that redux store to the component.
 // mapStateToProps gives us access to what is currently in the store and 
@@ -51,3 +53,4 @@ export default connect(mapStateToProps, mapDispatchToProps) (JobApplicationsCont
 
 // if this component needs access to job_applications from our store through props, how are we gonna actually get 
 // those props from our backend? Through fetch! So componentDidMount.
+

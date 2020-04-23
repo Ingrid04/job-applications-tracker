@@ -40,9 +40,9 @@ const Login = ({loginForm, updateLoginForm, login}) => {
 // }
 const mapStateToProps = state => {
     return {
-     // username: state.loginForm.username,
-        // email: state.loginForm.email
-        loginForm: state.loginForm
+    //  username: state.loginForm.username,
+    //  email: state.loginForm.email
+    loginForm: state.loginForm
     }
 }
 

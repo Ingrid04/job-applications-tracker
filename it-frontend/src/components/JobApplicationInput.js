@@ -1,14 +1,10 @@
 import React from 'react'
 
-class JobApplicationInput extends React.Component {
-
-    render() {
-        return (
-            <div>
-                Input
-            </div>
-        )
-    }
+const JobApplicationInput = ({ jobApplication }) => {
+    return (
+        <div> {jobApplication.company}</div>
+    )
 }
+
 
 export default JobApplicationInput;
