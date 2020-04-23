@@ -18,16 +18,16 @@ class JobApplicationsContainer extends React.Component {
             <div>
                 APPLICATION CONTAINER
                 {/* <JobApplicationInput /> */}
-                {/* <JobApplicationsList job_applications={this.props.job_applications}/> */}
+                <JobApplicationsList jobApplications={this.props.jobApplicationsReducer} />
             </div>
         )
     }
 }
 
 const mapStateToProps = (state) => {
-    console.log(state)
+    // console.log(state)
     return{
-        job_applications: state.job_applications
+        jobApplicationsReducer: state.jobApplicationsReducer
     }
 }
 

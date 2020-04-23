@@ -3,12 +3,11 @@ import { connect } from 'react-redux';
 import Login from "./Login.js"
 import Logout from "./Logout.js"
 
-const NavBar = ({ currentUser }) => {
+const NavBar = ({ currentUserReducer }) => {
     return (
        <div className="NavBar">
-            { currentUser ? <strong>Welcome, {currentUser.username}</strong> : ""}
-            { currentUser ? <Logout/>  :  <Login /> }
-            {/* <Login/> */}
+            { currentUserReducer ? <strong>Welcome, {currentUserReducer.username}</strong> : ""}
+            { currentUserReducer ? <Logout/>  :  <Login /> }
        </div>
     )
 }
@@ -18,7 +17,7 @@ const NavBar = ({ currentUser }) => {
 
 const mapStateToProps = state => {
     return {
-      currentUser: state.
+      currentUserReducer: state.currentUserReducer
     }
 }
 

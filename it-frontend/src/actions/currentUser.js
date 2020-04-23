@@ -3,12 +3,6 @@ import { fetchJobApplications } from "./fetchJobApplications.js"
 
 // synchronous action creators
 export const setCurrentUser = user =>  {
-    // return(dispatch) => {
-    //     dispatch({type: 'CURRENT_USER'});
-    //     fetch('http://localhost:3000/api/v1/users')
-    //     .then(resp => {return resp.json()})
-    //     .then(user => { dispatch({ type: 'SET_CURRENT_USER', payload: user})} );
-    // };
     return {
         type: "SET_CURRENT_USER",
         user

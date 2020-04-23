@@ -1,11 +1,3 @@
-// export const setMyJobApplications = job_applications => {
-//     return{
-//         type: "SET_MY_JOB_APPLICATIONS",
-//         job_applications
-
-//     }
-// }
-
 
 export const fetchJobApplications = () =>  {
     return (dispatch) => {
