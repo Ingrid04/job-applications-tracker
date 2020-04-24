@@ -17,5 +17,11 @@ export const fetchJobApplications = () =>  {
     };
 }
 
+export const clearJobApplications = () => {
+    return {
+        type: "CLEAR_MY_JOB_APP"
+    }
+}
+
 // our actions are sent to our reducers through mapStateToProps???
 

@@ -6,6 +6,8 @@ function jobApplicationsReducer(state = [], action) {
                 ...state,
                 action.payload];
             // this is our new redux state
+        case "CLEAR_MY_JOB_APP":
+            return []
         default:
         return state;
     }

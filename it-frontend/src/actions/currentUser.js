@@ -1,5 +1,6 @@
 import { resetLoginForm } from "./loginForm.js"
-import { fetchJobApplications } from "./fetchJobApplications.js"
+import { fetchJobApplications, clearJobApplications } from "./fetchJobApplications.js"
+
 
 // synchronous action creators
 export const setCurrentUser = user =>  {
@@ -44,9 +45,10 @@ export const login = (credentials, history) => {
         };
 }
 
-export const logout = () => {
+export const logout = event => {
     return dispatch => {
         dispatch(clearCurrentUser())
+        dispatch(clearJobApplications())
         // line above, to clear my action right away, I dont wanna wait for a response from my backend
         return fetch('http://localhost:3001/api/v1/logout', {
             credentials: "include",

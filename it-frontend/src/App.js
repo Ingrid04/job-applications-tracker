@@ -21,10 +21,10 @@ class App extends React.Component {
     const { loggedIn } = this.props
     return (
         <div className="App">
-          <NavBar />
+          { loggedIn ? <NavBar /> : <Home /> }
           <Switch>
             <Route exact path="/login" component={Login} />
-            <Route exact path="/" render={() => loggedIn ? <JobApplicationsContainer /> : < Home />} />
+            {/* <Route exact path="/" render={() => loggedIn ? <JobApplicationsContainer /> : < Home />} /> */}
             <Route exact path="/profile" render={() => loggedIn ? <JobApplicationsContainer /> : < Home />} />  
             <Route exact path="/application/new" component={NewJobApplicationForm} />
           </Switch>
