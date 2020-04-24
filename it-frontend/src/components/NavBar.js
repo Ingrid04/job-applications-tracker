@@ -1,11 +1,14 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import Logout from './Logout.js'
+import Logout from './Logout.js';
+import { NavLink } from 'react-router-dom'
 
 const NavBar = ({ currentUserReducer }) => {
     return (
        <div className="NavBar">
             { currentUserReducer ? <strong>Welcome, {currentUserReducer.username} <Logout/> </strong> : ""}
+            <NavLink to="/profile"> My Job Applications  |   </NavLink>
+            <NavLink to="/application/new"> New Application    </NavLink >
        </div>
     )
 }
