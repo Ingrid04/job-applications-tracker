@@ -7,8 +7,9 @@ import { getCurrentUser } from './actions/currentUser.js'
 import NavBar from './components/NavBar.js';
 import Login from './components/Login.js'
 import Home from './components/Home.js'
-import JobApplicationsList from './components/JobApplicationsList';
-import { Route } from 'react-router-dom'
+import JobApplicationsList from './components/JobApplicationsList.js';
+import NewJobApplicationForm from './components/NewJobApplicationForm.js'
+import { Route, Switch } from 'react-router-dom'
 
 class App extends React.Component {
 
@@ -21,10 +22,12 @@ class App extends React.Component {
     return (
         <div className="App">
           <NavBar />
+          <Switch>
             <Route exact path="/login" component={Login} />
             <Route exact path="/" render={() => loggedIn ? <JobApplicationsContainer /> : < Home />} />
-            <Route exact path="/profile" render={() => loggedIn ? <JobApplicationsContainer /> : < Home />} />
-            <Route exact path="/job_applications" component={JobApplicationsList} />
+            <Route exact path="/profile" render={() => loggedIn ? <JobApplicationsContainer /> : < Home />} />  
+            <Route exact path="/application/new" component={NewJobApplicationForm} />
+          </Switch>
         </div>
     );
   }

@@ -37,6 +37,7 @@ export const login = (credentials, history) => {
                     dispatch(fetchJobApplications())
                     dispatch(resetLoginForm())
                     history.push('/profile')
+                    // history is a prop of route. It's a mutable object that allows me to change the url.
                 }
             })
             .catch(console.log)
@@ -54,7 +55,7 @@ export const logout = () => {
     }
 }
 
-export const getCurrentUser = (history) => {
+export const getCurrentUser = () => {
     console.log("DISPATCHING GET CURRENT USER")
     return(dispatch) => {
             return fetch('http://localhost:3001/api/v1/get_current_user', {
