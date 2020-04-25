@@ -6,10 +6,6 @@ import JobApplicationsList from '../components/JobApplicationsList'
 
 class JobApplicationsContainer extends React.Component {
 
-    componentDidMount() {
-        console.log(this.props)
-        this.props.fetchJobApplications()
-    }
     // we have to do this.props to connect fetchJobApplications() to redux store.
     // in other words, we want to access this function through props.
 

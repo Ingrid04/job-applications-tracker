@@ -1,6 +1,6 @@
 import React from 'react';
 import './App.css';
-// import fetchJobApplications from './actions/fetchJobApplications'
+import { fetchJobApplications } from './actions/fetchJobApplications'
 import JobApplicationsContainer from './containers/JobApplicationsContainer.js'
 import { connect } from 'react-redux';
 import { getCurrentUser } from './actions/currentUser.js'
@@ -15,7 +15,10 @@ class App extends React.Component {
 
   componentDidMount() {
     this.props.getCurrentUser()
+    this.props.fetchJobApplications()
   }
+
+
 
   render() {
     const { loggedIn } = this.props
@@ -40,4 +43,4 @@ const mapStateToProps = state => {
 }
 
 
-export default connect(mapStateToProps, { getCurrentUser }) (App);
+export default connect(mapStateToProps, { getCurrentUser, fetchJobApplications }) (App);
