@@ -1,8 +1,9 @@
 import React from 'react'
 
 const JobApplicationInput = ({ job }) => {
+
     return (
-    <li> {job[0].application_date} - {job[0].company} - {job[0].role} - {job[0].contact} - {job[0].interview_status} - {job[0].notes}</li>
+        <li> {job[1].application_date} - {job[1].company} - {job[1].role} - {job[1].contact} - {job[1].interview_status} - {job[1].notes}</li>
     )
 }
 

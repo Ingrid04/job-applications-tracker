@@ -7,7 +7,7 @@ function jobApplicationsReducer(state = [], action) {
                 action.payload];
             // this is our new redux state
         case "ADD_APPLICATION":
-            return state.jobApplications.concat(action.jobApplications);
+            return state.concat(action.jobApplication);
 
         case "CLEAR_MY_JOB_APP":
             return []

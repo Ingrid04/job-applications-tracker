@@ -4,7 +4,7 @@ export const clearJobApplications = () => {
     }
 }
 
-export const ADD_APPLICATION = jobApplication => {
+export const addApplication = jobApplication => {
     return {
         type: "ADD_APPLICATION",
         jobApplication
@@ -33,7 +33,7 @@ export const fetchJobApplications = () =>  {
 
 // our actions are sent to our reducers through mapStateToProps???
 
-export const createJobApplication = jobApplicationData => {
+export const createJobApplication = (jobApplicationData, history ) => {
 
     return dispatch => {
 
@@ -58,6 +58,14 @@ export const createJobApplication = jobApplicationData => {
             body: JSON.stringify(getBackJobApplicationData)
         })
         .then(response => response.json())
+        .then(response => {
+            if (response.error) {
+                alert(response.error)
+            } else {
+                dispatch(addApplication(response.data))
+                history.push(`/trips/${response.id}`)
+            }
+        })
 
     }
 }

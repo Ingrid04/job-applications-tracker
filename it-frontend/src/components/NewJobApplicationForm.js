@@ -22,7 +22,7 @@ const NewJobApplicationForm = ({ newJobApplication, history,  updateNewJobAppFor
         createJobApplication({
             ...newJobApplication,
             userId
-        })
+        }, history)
     }
 
     return(
