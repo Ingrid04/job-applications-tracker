@@ -4,7 +4,7 @@ function jobApplicationsReducer(state = [], action) {
             // return {job_applications: action.payload}
             return [
                 ...state,
-                action.payload];
+                ...action.payload];
             // this is our new redux state
         case "ADD_APPLICATION":
             return state.concat(action.jobApplication);

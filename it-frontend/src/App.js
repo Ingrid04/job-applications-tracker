@@ -11,6 +11,8 @@ import NewJobApplicationForm from './components/NewJobApplicationForm.js'
 import JobApplicationCard from './components/JobApplicationCard.js'
 import { Route, Switch } from 'react-router-dom'
 import { setFormDataForEdit } from './actions/newJobApplicationForm.js'
+import NewJobFormContainer from './containers/NewJobFormContainer';
+import EditJobFormContainer from './containers/EditJobFormContainer';
 
 class App extends React.Component {
 
@@ -29,7 +31,7 @@ class App extends React.Component {
           <Switch>
             <Route exact path="/login" component={Login} />
             <Route exact path="/profile" render={() => loggedIn ? <JobApplicationsContainer /> : < Home />} />  
-            <Route exact path="/application/new" component={NewJobApplicationForm} />
+            <Route exact path="/application/new" component={NewJobFormContainer} />
             <Route exact path="/application/:id" render={ props => {
               const jobApp = jobApplications.flat().find(job => parseInt(job.id) === parseInt(props.match.params.id))
               console.log(jobApp)
@@ -37,7 +39,6 @@ class App extends React.Component {
             }} />
             <Route exact path="/application/:id/edit" render={ props => {
               const jobApp = jobApplications.flat().find(job => parseInt(job.id) === parseInt(props.match.params.id))
-              jobApp && setFormDataForEdit(jobApp)
               return <NewJobApplicationForm editMode job={jobApp} {...props} />
             }} />
           </Switch>
