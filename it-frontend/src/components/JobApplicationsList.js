@@ -1,10 +1,15 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import JobApplicationInput from "./JobApplicationInput.js"
+import JobApplicationCard from "./JobApplicationCard.js"
+import { Link } from 'react-router-dom'
 
 const JobApplicationsList = (props) => {
     // debugger
-    const jobList = props.jobApplicationsReducer.map(job => <JobApplicationInput job={job} key={job[0].id}/>)
+    console.log(props)
+
+    const jobList = props.jobApplicationsReducer.map(job => (<p key={parseInt(job.id)}>
+       <Link to={`/application/${job.id}`}> {job.application_date} </Link> </p>)
+    )
    
     return(
      jobList

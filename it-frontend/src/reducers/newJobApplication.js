@@ -23,6 +23,8 @@ export default(state = initialState, action) => {
             // }
         case "RESET_NEW_JOB_APP_FORM":
             return initialState
+        case "SET_FORM_DATA_FOR_EDIT":
+            return action.jobFormData
         default:
             return state;
     }

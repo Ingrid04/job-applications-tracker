@@ -1,7 +1,6 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import { fetchJobApplications } from '../actions/fetchJobApplications'
-import JobApplicationInput from '../components/JobApplicationInput'
 import JobApplicationsList from '../components/JobApplicationsList'
 
 class JobApplicationsContainer extends React.Component {
@@ -13,7 +12,6 @@ class JobApplicationsContainer extends React.Component {
         return(
             <div>
                 MY JOB APPLICATIONS
-                {/* <JobApplicationInput /> */}
                 <JobApplicationsList />
             </div>
         )

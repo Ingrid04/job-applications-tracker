@@ -1,3 +1,5 @@
+import { resetNewJobAppForm } from './newJobApplicationForm'
+
 export const clearJobApplications = () => {
     return {
         type: "CLEAR_MY_JOB_APP"
@@ -63,7 +65,10 @@ export const createJobApplication = (jobApplicationData, history ) => {
                 alert(response.error)
             } else {
                 dispatch(addApplication(response.data))
-                history.push(`/trips/${response.id}`)
+                // I am adding the job application to the redux store
+                dispatch(resetNewJobAppForm())
+                // I am dispatching to clear the form
+                history.push(`/application/${response.id}`)
             }
         })
 
