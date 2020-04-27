@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom'
 
 const JobApplicationCard = ( {job} ) => {
 
-    console.log(job)
+    // console.log(job)
 
     return (
 

@@ -4,15 +4,13 @@ import { fetchJobApplications } from './actions/fetchJobApplications'
 import JobApplicationsContainer from './containers/JobApplicationsContainer.js'
 import { connect } from 'react-redux';
 import { getCurrentUser } from './actions/currentUser.js'
-import NavBar from './components/NavBar.js';
+import NavBar from './components/NavBar.js'
 import Login from './components/Login.js'
 import Home from './components/Home.js'
-import NewJobApplicationForm from './components/NewJobApplicationForm.js'
 import JobApplicationCard from './components/JobApplicationCard.js'
 import { Route, Switch } from 'react-router-dom'
-import { setFormDataForEdit } from './actions/newJobApplicationForm.js'
-import NewJobFormContainer from './containers/NewJobFormContainer';
-import EditJobFormContainer from './containers/EditJobFormContainer';
+import NewJobFormContainer from './containers/NewJobFormContainer'
+import EditJobFormContainer from './containers/EditJobFormContainer'
 
 class App extends React.Component {
 
@@ -24,7 +22,7 @@ class App extends React.Component {
 
 
   render() {
-    const { loggedIn,  jobApplications, setFormDataForEdit } = this.props
+    const { loggedIn,  jobApplications } = this.props
     return (
         <div className="App">
           { loggedIn ? <NavBar /> : <Home /> }
@@ -55,4 +53,4 @@ const mapStateToProps = state => {
 }
 
 
-export default connect(mapStateToProps, { getCurrentUser, fetchJobApplications, setFormDataForEdit }) (App);
+export default connect(mapStateToProps, { getCurrentUser, fetchJobApplications }) (App);

@@ -1,5 +1,5 @@
 import React from 'react'
-import { updateJobApp } from '../actions/fetchJobApplications.js'
+import { updateJobApp, deleteJobApp } from '../actions/fetchJobApplications.js'
 import { setFormDataForEdit, resetNewJobAppForm } from '../actions/newJobApplicationForm.js'
 import { connect } from 'react-redux'
 import NewJobApplicationForm from '../components/NewJobApplicationForm.js';
@@ -31,9 +31,15 @@ class EditJobFormContainer extends React.Component {
 
     render() {
 
-        const { history, handleSubmit } = this.props
-        return <NewJobApplicationForm editMode handleSubmit={this.handleSubmit}/>
+        const { history, handleSubmit, deleteJobApp, job } = this.props
+        const jobId = job ? job.id : null
+        return <>
+                <NewJobApplicationForm editMode handleSubmit={this.handleSubmit}/>
+                <br/>
+                <br/>
+                <button onClick={() => deleteJobApp(jobId, history)}>Delete this application</button>
+                </>
     }
 }
 
-export default connect(null, { updateJobApp, setFormDataForEdit, resetNewJobAppForm }) (EditJobFormContainer);
+export default connect(null, { updateJobApp, setFormDataForEdit, resetNewJobAppForm, deleteJobApp }) (EditJobFormContainer);

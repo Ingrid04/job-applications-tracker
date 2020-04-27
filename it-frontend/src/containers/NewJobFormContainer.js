@@ -5,8 +5,7 @@ import NewJobApplicationForm from '../components/NewJobApplicationForm.js';
 
 const NewJobFormContainer = ({ history, createJobApplication}) => {
 
-    const handleSubmit = (event, newJobApplication, userId, history )=> {
-        event.preventDefault()
+    const handleSubmit = (newJobApplication, userId )=> {
         createJobApplication({
             ...newJobApplication,
             userId
