@@ -6,7 +6,6 @@ const JobApplicationsList = (props) => {
     // debugger
     
     const jobList = props.jobApplicationsReducer.map(job => <JobApplicationCard job={job} key={job.id}/>)
-
     
         return(
             jobList 

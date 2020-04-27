@@ -1,7 +1,6 @@
 function jobApplicationsReducer(state = [], action) {
     switch(action.type) {
         case "ADD_JOB_APPLICATIONS":
-            // return {job_applications: action.payload}
             // console.log("this is action", action)
             return state.concat(action.payload);
             // this is our new redux state

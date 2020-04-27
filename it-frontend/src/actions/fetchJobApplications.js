@@ -78,7 +78,7 @@ export const createJobApplication = (jobApplicationData, history ) => {
             if (response.error) {
                 alert(response.error)
             } else {
-                dispatch(addApplication(response.data))
+                dispatch(addApplication(response))
                 // I am adding the job application to the redux store
                 dispatch(resetNewJobAppForm())
                 // I am dispatching to clear the form

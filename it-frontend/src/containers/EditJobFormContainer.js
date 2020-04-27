@@ -20,7 +20,6 @@ class EditJobFormContainer extends React.Component {
     }
 
     handleSubmit = (newJobApplication, userId )=> {
-        console.log("HEREEEEEE")
         const { updateJobApp, job, history } = this.props
         updateJobApp({
             ...newJobApplication,
@@ -31,7 +30,7 @@ class EditJobFormContainer extends React.Component {
 
     render() {
 
-        const { history, handleSubmit, deleteJobApp, job } = this.props
+        const { history, deleteJobApp, job } = this.props
         const jobId = job ? job.id : null
         return <>
                 <NewJobApplicationForm editMode handleSubmit={this.handleSubmit}/>
