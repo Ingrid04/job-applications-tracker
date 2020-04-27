@@ -33,6 +33,7 @@ const JobApplicationCard = ( {job} ) => {
                                 <div className="application-col light-blue">{job.interview_status}</div>   
                                 <div className="application-col light-blue">{job.notes}</div>
                             </Row>
+             
             <Link to={`/application/${job.id}/edit`}>Edit</Link>
         
         </Container> :

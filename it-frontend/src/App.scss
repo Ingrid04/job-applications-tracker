@@ -45,5 +45,6 @@ body{
 .NavBar {
   display: flex;
   flex-direction: row;
-  color: pink
+  color: pink;
+  justify-content: space-between;
 }

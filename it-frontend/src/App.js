@@ -39,7 +39,7 @@ class App extends React.Component {
             }} />
             <Route exact path="/application/:id/edit" render={ props => {
               const jobApp = jobApplications.flat().find(job => parseInt(job.id) === parseInt(props.match.params.id))
-              return <NewJobApplicationForm editMode job={jobApp} {...props} />
+              return <EditJobFormContainer editMode job={jobApp} {...props} />
             }} />
           </Switch>
         </div>

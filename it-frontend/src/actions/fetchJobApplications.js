@@ -13,6 +13,13 @@ export const addApplication = jobApplication => {
     }
 }
 
+export const updateJobAppSuccess = jobApplication => {
+    return {
+        type: "UPDATE_APPLICATION",
+        jobApplication
+    }
+}
+
 
 
 export const fetchJobApplications = () =>  {
@@ -74,3 +81,42 @@ export const createJobApplication = (jobApplicationData, history ) => {
 
     }
 }
+
+export const  updateJobApp = (jobApplicationData, history ) => {
+
+        return dispatch => {
+    
+            const getBackJobApplicationData = {
+                jobApplication: {
+                    application_date: jobApplicationData.applicationDate,
+                    company: jobApplicationData.company,
+                    role: jobApplicationData.role,
+                    contact: jobApplicationData.contact,
+                    interview_status: jobApplicationData.interviewStatus,
+                    notes: jobApplicationData.notes
+                }
+            }
+    
+            return fetch(`http://localhost:3001/api/v1/job_applications/${jobApplicationData.jobId}`, {
+                credentials: "include",
+                method: "PATCH",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify(getBackJobApplicationData)
+            })
+            .then(response => response.json())
+            .then(response => {
+                if (response.error) {
+                    alert(response.error)
+                } else {
+                    dispatch(updateJobAppSuccess(response.data))
+                    // I am adding the job application to the redux store
+                    // dispatch(resetNewJobAppForm())
+                    // I am dispatching to clear the form
+                    history.push(`/application/${response.id}`)
+                }
+            })
+    
+        }
+    }

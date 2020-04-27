@@ -14,6 +14,7 @@ export const resetNewJobAppForm = () => {
 }
 
 export const setFormDataForEdit = job => {
+    
     const jobFormData = {
         applicationDate: job.application_date,
         company: job.company,

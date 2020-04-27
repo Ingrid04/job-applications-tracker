@@ -5,7 +5,7 @@ import { connect } from 'react-redux'
 
 //  3 - This means REDUX gives us back a prop called updateNewJobAppForm,
 //  which when invoked, actually REDUX will now dispatch
-const NewJobApplicationForm = ({ newJobApplication, history,  updateNewJobAppForm, userId, handleSubmit}) => {
+const NewJobApplicationForm = ({ newJobApplication, updateNewJobAppForm, userId, handleSubmit, editMode }) => {
 
     const handleChange = event => {
         const { value, name } = event.target
@@ -26,8 +26,9 @@ const NewJobApplicationForm = ({ newJobApplication, history,  updateNewJobAppFor
 
     return(
 
-        <form onSubmit={ event => {
-            handleSubmit(event, newJobApplication, userId, history)}
+        <form onSubmit={ event => { 
+            event.preventDefault()
+            handleSubmit(newJobApplication, userId)}
         }>
             <input
             placeholder="application date"
@@ -66,7 +67,9 @@ const NewJobApplicationForm = ({ newJobApplication, history,  updateNewJobAppFor
             value={newJobApplication.notes}
             />
             <br/>
-            <input type="submit" value="Add Application" />
+            <br/>
+            <input type="submit" 
+            value= {editMode ? "Update this Application" : "Add Application"} />
 
         </form>
 )};

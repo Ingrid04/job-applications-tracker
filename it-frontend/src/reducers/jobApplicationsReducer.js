@@ -8,7 +8,9 @@ function jobApplicationsReducer(state = [], action) {
             // this is our new redux state
         case "ADD_APPLICATION":
             return state.concat(action.jobApplication);
-
+        case "UPDATE_APPLICATION":
+            console.log("this is ...", state)
+            return state.map( array => array.id === action.id ? action.state : state )
         case "CLEAR_MY_JOB_APP":
             return []
         default:
