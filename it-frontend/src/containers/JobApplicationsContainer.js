@@ -11,7 +11,7 @@ class JobApplicationsContainer extends React.Component {
     render() {
         return(
             <div>
-                MY JOB APPLICATIONS
+                <h4 className="job"> MY JOB APPLICATIONS </h4>
                 <JobApplicationsList />
             </div>
         )

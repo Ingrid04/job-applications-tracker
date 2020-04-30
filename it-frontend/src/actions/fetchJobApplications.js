@@ -118,9 +118,6 @@ export const  updateJobApp = (jobApplicationData, history ) => {
                     alert(response.error)
                 } else {
                     dispatch(updateJobAppSuccess(response))
-                    // I am adding the job application to the redux store
-                    // dispatch(resetNewJobAppForm())
-                    // I am dispatching to clear the form
                     history.push(`/application/${response.id}`)
                 }
             })

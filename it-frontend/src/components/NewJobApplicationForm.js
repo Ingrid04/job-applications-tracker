@@ -16,14 +16,6 @@ const NewJobApplicationForm = ({ newJobApplication, updateNewJobAppForm, userId,
         // So I have to destructure closer to handle change which is in const NewJobApplicationForm
     }
 
-    // const handleSubmit = event => {
-    //     event.preventDefault()
-    //     createJobApplication({
-    //         ...newJobApplication,
-    //         userId
-    //     }, history)
-    // }
-
     return(
 
         <form onSubmit={ event => { 

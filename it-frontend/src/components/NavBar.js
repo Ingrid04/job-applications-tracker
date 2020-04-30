@@ -6,9 +6,9 @@ import { NavLink } from 'react-router-dom'
 const NavBar = ({ currentUserReducer }) => {
     return (
        <div className="NavBar">
-          { currentUserReducer ? <strong> Welcome, {currentUserReducer.username}  <br/> <Logout/> </strong> : ""}
-            <NavLink to="/profile"> My Job Applications </NavLink>
-            <NavLink to="/application/new"> New Application </NavLink >
+         <h4> { currentUserReducer ? <strong> Welcome, {currentUserReducer.username}  <br/><a className="button"> <Logout/> </a> </strong> : ""} </h4>
+            <NavLink to="/profile" className="link1"> My Job Applications </NavLink>
+            <NavLink to="/application/new" className="link2"> New Application </NavLink >
        </div>
     )
 }
