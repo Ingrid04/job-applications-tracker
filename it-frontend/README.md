@@ -17,7 +17,7 @@ To test use: npm test or yarn test
 
 ### PREVIEW
 
-![Job Application Tracker](/Users/ingridf/Desktop/Screen Shot 2020-04-30 at 2.19.03 PM.png)
+![Job Application Tracker](images/imagereadme.png)
 
 ## AUTHOR
 
