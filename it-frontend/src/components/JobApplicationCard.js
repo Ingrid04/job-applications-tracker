@@ -34,7 +34,7 @@ const JobApplicationCard = ( {job} ) => {
                                 <div className="application-col light-blue">{job.notes}</div>
                             </Row>
              
-            <Link to={`/application/${job.id}/edit`}>Edit</Link>
+            <Link to={`/applications/${job.id}/edit`}>Edit</Link>
         
         </Container> :
         <p> This is Your Card With No Application </p>

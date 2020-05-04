@@ -5,7 +5,6 @@ import { connect } from 'react-redux'
 import NewJobApplicationForm from '../components/NewJobApplicationForm.js';
 
 class EditJobFormContainer extends React.Component {
-    // this container has access to history, that is why I dont need to pass it
 
     componentDidMount() {
         this.props.job && this.props.setFormDataForEdit(this.props.job)

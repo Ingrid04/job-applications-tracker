@@ -16,8 +16,8 @@ export const clearCurrentUser = () => {
     }
 }
 
-// asynchronous action creators. thunk returns an action creator that is a function, which has as an argument this function, so returns
-// an arrow function
+// asynchronous action creators
+
 export const login = (credentials, history) => {
     console.log(credentials)
     return(dispatch) => {
@@ -38,7 +38,7 @@ export const login = (credentials, history) => {
                     dispatch(fetchJobApplications())
                     dispatch(resetLoginForm())
                     history.push('/profile')
-                    // history is a prop of route. It's a mutable object that allows me to change the url.
+                    
                 }
             })
             .catch(console.log)
@@ -49,7 +49,6 @@ export const logout = event => {
     return dispatch => {
         dispatch(clearCurrentUser())
         dispatch(clearJobApplications())
-        // line above, to clear my action right away, I dont wanna wait for a response from my backend
         return fetch('http://localhost:3001/api/v1/logout', {
             credentials: "include",
             method: "DELETE"
@@ -73,7 +72,6 @@ export const getCurrentUser = () => {
                     alert(user.error)
                 } else {
                     dispatch(setCurrentUser(user))
-                    // dispatch(fetchJobApplications())
                 }
             })
             .catch(console.log)

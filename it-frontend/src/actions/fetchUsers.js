@@ -8,10 +8,3 @@
     };
 }
 
-  
-// export const removeJobApplication = id => {
-//     return {
-//       type: 'REMOVE_JOB_APPLICATION',
-//       id
-//     };
-// };

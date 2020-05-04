@@ -15,12 +15,7 @@ export default(state = initialState, action) => {
                 ...state,
                 [action.formData.name]: action.formData.value
             }
-            console.log("return val is", returnVal)
             return returnVal
-            // return {
-            //     ...state,
-            //     [action.formData.name]: action.formData.value
-            // }
         case "RESET_NEW_JOB_APP_FORM":
             return initialState
         case "SET_FORM_DATA_FOR_EDIT":

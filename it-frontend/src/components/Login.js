@@ -4,8 +4,6 @@ import { updateLoginForm } from '../actions/loginForm.js'
 import { login } from '../actions/currentUser.js'
 
 const Login = ({loginForm, updateLoginForm, login, history }) => {
-    // this updateLoginForm is not the same than the import, it is a redux version of that function of the action creator,
-    // so we can use it as a callback
 
     const handleOnChange = event => {
         const {name, value} = event.target
@@ -34,13 +32,6 @@ const Login = ({loginForm, updateLoginForm, login, history }) => {
     )
 }
 
-// connects to data coming in here to the store. we are taking state from redux.
-// Like redux I need these states from the store. READ ONLY.
-// This gives me an argument coming to this component that looks like this:
-// {
-//     username: "something",
-//     email:"something"
-// }
 const mapStateToProps = state => {
     return {
     //  username: state.loginForm.username,

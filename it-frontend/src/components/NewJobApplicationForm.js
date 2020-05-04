@@ -1,19 +1,13 @@
 import React from 'react';
 import { updateNewJobAppForm } from '../actions/newJobApplicationForm.js'
-// 1 - we first grab the action creator
 import { connect } from 'react-redux'
 
-//  3 - This means REDUX gives us back a prop called updateNewJobAppForm,
-//  which when invoked, actually REDUX will now dispatch
+
 const NewJobApplicationForm = ({ newJobApplication, updateNewJobAppForm, userId, handleSubmit, editMode }) => {
 
     const handleChange = event => {
         const { value, name } = event.target
         updateNewJobAppForm(name, value)
-        //  4 - THIS IS JUST AN INVOCATION OF JUST THE ACTION CREATOR,
-        // it is not REDUX dispatching the action built by the actions creator with the appropiate arguments.
-        // this last line represents my action creator. I want to invoke the one that I get from redux as props,
-        // So I have to destructure closer to handle change which is in const NewJobApplicationForm
     }
 
     return(
@@ -74,8 +68,5 @@ const mapStateToProps = state => {
         userId
     }
 }
-// 2- we pass the action creator to REDUX's connect function using either
-// mapDispatchToProps or the shorthand syntax : { updateNewJobAppForm }
+
 export default connect (mapStateToProps, { updateNewJobAppForm }) (NewJobApplicationForm);
-// I'm giving { updateNewJobAppForm } to redux. Here is an action creation, takes this action and redux takes it and
-// take dispatch in the store and all the redux thing come together and give it back to me as props

@@ -29,13 +29,13 @@ class App extends React.Component {
           <Switch>
             <Route exact path="/login" component={Login} />
             <Route exact path="/profile" render={() => loggedIn ? <JobApplicationsContainer /> : < Home />} />  
-            <Route exact path="/application/new" component={NewJobFormContainer} />
-            <Route exact path="/application/:id" render={ props => {
+            <Route exact path="/applications/new" component={NewJobFormContainer} />
+            <Route exact path="/applications/:id" render={ props => {
               const jobApp = jobApplications.flat().find(job => parseInt(job.id) === parseInt(props.match.params.id))
               console.log(jobApp)
               return <JobApplicationCard job={jobApp} {...props} />
             }} />
-            <Route exact path="/application/:id/edit" render={ props => {
+            <Route exact path="/applications/:id/edit" render={ props => {
               const jobApp = jobApplications.flat().find(job => parseInt(job.id) === parseInt(props.match.params.id))
               return <EditJobFormContainer editMode job={jobApp} {...props} />
             }} />

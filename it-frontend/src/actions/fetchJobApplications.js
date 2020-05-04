@@ -47,8 +47,6 @@ export const fetchJobApplications = () =>  {
     };
 }
 
-// our actions are sent to our reducers through mapStateToProps???
-
 export const createJobApplication = (jobApplicationData, history ) => {
 
     return dispatch => {
@@ -79,10 +77,8 @@ export const createJobApplication = (jobApplicationData, history ) => {
                 alert(response.error)
             } else {
                 dispatch(addApplication(response))
-                // I am adding the job application to the redux store
                 dispatch(resetNewJobAppForm())
-                // I am dispatching to clear the form
-                history.push(`/application/${response.id}`)
+                history.push(`/applications/${response.id}`)
             }
         })
 
@@ -118,7 +114,7 @@ export const  updateJobApp = (jobApplicationData, history ) => {
                     alert(response.error)
                 } else {
                     dispatch(updateJobAppSuccess(response))
-                    history.push(`/application/${response.id}`)
+                    history.push(`/applications/${response.id}`)
                 }
             })
     
