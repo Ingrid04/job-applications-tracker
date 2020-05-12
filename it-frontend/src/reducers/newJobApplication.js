@@ -8,7 +8,7 @@ const initialState = {
 
 }
 export default(state = initialState, action) => {
-    console.log("in the reducer", action)
+    // console.log("in the reducer", action)
     switch (action.type) {
         case "UPDATE_NEW_JOB_APP_FORM":
             const returnVal = {

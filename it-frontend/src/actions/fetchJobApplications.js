@@ -29,11 +29,12 @@ export const deleteApplicationSuccess = jobApplicationId => {
 
 
 
+
 export const fetchJobApplications = () =>  {
     return (dispatch) => {
         // debugger
         // dispatch({type: 'LOADING_JOB_APPLICATIONS'});
-        console.log('inside fetch job applications')
+        // console.log('inside fetch job applications')
         return fetch('http://localhost:3001/api/v1/job_applications', {
             credentials: "include",
             method: 'GET',
@@ -48,9 +49,7 @@ export const fetchJobApplications = () =>  {
 }
 
 export const createJobApplication = (jobApplicationData, history ) => {
-
     return dispatch => {
-
         const getBackJobApplicationData = {
             jobApplication: {
                 application_date: jobApplicationData.applicationDate,
@@ -73,6 +72,7 @@ export const createJobApplication = (jobApplicationData, history ) => {
         })
         .then(response => response.json())
         .then(response => {
+            console.log('d')
             if (response.error) {
                 alert(response.error)
             } else {
@@ -81,7 +81,6 @@ export const createJobApplication = (jobApplicationData, history ) => {
                 history.push(`/applications/${response.id}`)
             }
         })
-
     }
 }
 

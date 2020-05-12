@@ -12,6 +12,8 @@ import { Route, Switch } from 'react-router-dom'
 import NewJobFormContainer from './containers/NewJobFormContainer'
 import EditJobFormContainer from './containers/EditJobFormContainer'
 
+
+
 class App extends React.Component {
 
   componentDidMount() {
@@ -24,7 +26,8 @@ class App extends React.Component {
   render() {
     const { loggedIn,  jobApplications } = this.props
     return (
-        <div className="App">
+        <div className="App"> 
+        {/* <img src="https://leverageedu.com/blog/wp-content/uploads/2019/07/Resume-in-Computer-Science-01.png" alt="image" className="img"/> */}
           { loggedIn ? <NavBar /> : <Home /> }
           <Switch>
             <Route exact path="/login" component={Login} />
@@ -32,7 +35,7 @@ class App extends React.Component {
             <Route exact path="/applications/new" component={NewJobFormContainer} />
             <Route exact path="/applications/:id" render={ props => {
               const jobApp = jobApplications.flat().find(job => parseInt(job.id) === parseInt(props.match.params.id))
-              console.log(jobApp)
+              // console.log(jobApp)
               return <JobApplicationCard job={jobApp} {...props} />
             }} />
             <Route exact path="/applications/:id/edit" render={ props => {
