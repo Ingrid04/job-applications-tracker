@@ -23,12 +23,16 @@ const Login = ({loginForm, updateLoginForm, login, history }) => {
           }
     }
     return (
-        <form onSubmit={handleSubmit} noValidate >
-            <input placeholder="username" value={loginForm.username} name="username" type="text" onChange={handleOnChange} required />
-            <input placeholder="email" value={loginForm.email} name="email" type="email" onChange={handleOnChange} required />
-            <input type="submit" value="Log In" />     
-        </form>
-
+        <div className="container">
+            <div className="form-popup">
+                <form onSubmit={handleSubmit} noValidate >
+                    <span className="close">&times;</span>
+                    <input className="login-field" placeholder="username" value={loginForm.username} name="username" type="text" onChange={handleOnChange} required />
+                    <input className="login-field" placeholder="email" value={loginForm.email} name="email" type="email" onChange={handleOnChange} required />
+                    <input type="submit" value="Login" className="btn" />
+                </form>
+            </div>
+        </div>
     )
 }
 

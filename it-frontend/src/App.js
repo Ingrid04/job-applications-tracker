@@ -27,7 +27,6 @@ class App extends React.Component {
     const { loggedIn,  jobApplications } = this.props
     return (
         <div className="App"> 
-        {/* <img src="https://leverageedu.com/blog/wp-content/uploads/2019/07/Resume-in-Computer-Science-01.png" alt="image" className="img"/> */}
           { loggedIn ? <NavBar /> : <Home /> }
           <Switch>
             <Route exact path="/login" component={Login} />

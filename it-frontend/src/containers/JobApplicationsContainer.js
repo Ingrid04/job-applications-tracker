@@ -2,6 +2,7 @@ import React from 'react'
 import { connect } from 'react-redux'
 import { fetchJobApplications } from '../actions/fetchJobApplications'
 import JobApplicationsList from '../components/JobApplicationsList'
+import { NavLink } from 'react-router-dom'
 
 
 class JobApplicationsContainer extends React.Component {
@@ -26,6 +27,9 @@ class JobApplicationsContainer extends React.Component {
         })
         return(
             <div>
+                <nav className="nav"> 
+                    <NavLink to="/applications/new" className="link2"> Create Application </NavLink > 
+                </nav>
                 <h4 className="job"> MY JOB APPLICATIONS </h4>
                 <form onSubmit={this.handleSubmit}>
                     <input 

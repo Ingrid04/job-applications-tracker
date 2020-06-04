@@ -61,7 +61,7 @@ const NewJobApplicationForm = ({ newJobApplication, updateNewJobAppForm, userId,
 )};
 
 const mapStateToProps = state => {
-    // console.log(state.newJobApplication)
+    
     const userId = state.currentUserReducer ? state.currentUserReducer.id : "" 
     return{
         newJobApplication: state.newJobApplication,

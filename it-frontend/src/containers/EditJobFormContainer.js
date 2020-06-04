@@ -3,6 +3,7 @@ import { updateJobApp, deleteJobApp } from '../actions/fetchJobApplications.js'
 import { setFormDataForEdit, resetNewJobAppForm } from '../actions/newJobApplicationForm.js'
 import { connect } from 'react-redux'
 import NewJobApplicationForm from '../components/NewJobApplicationForm.js';
+import { NavLink } from 'react-router-dom'
 
 class EditJobFormContainer extends React.Component {
 
@@ -31,12 +32,19 @@ class EditJobFormContainer extends React.Component {
 
         const { history, deleteJobApp, job } = this.props
         const jobId = job ? job.id : null
-        return <>
-                <NewJobApplicationForm editMode handleSubmit={this.handleSubmit}/>
-                <br/>
-                <br/>
+        return (
+            <div>
+                <nav className="nav">
+                    <NavLink to="/profile" className="link1"> My Applications </NavLink>
+                </nav>
+                
+                <div className="margin-form"> 
+                    <NewJobApplicationForm editMode handleSubmit={this.handleSubmit}/> 
+                </div>
                 <button onClick={() => deleteJobApp(jobId, history)}>Delete this application</button>
-                </>
+            </div>
+        )  
+           
     }
 }
 

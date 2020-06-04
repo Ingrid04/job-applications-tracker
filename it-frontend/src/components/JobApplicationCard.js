@@ -8,7 +8,6 @@ const JobApplicationCard = ( {job} ) => {
     // console.log(job)
 
     return (
-
         job  ?
         <Container fluid style={{marginTop: "40px"}} >
             <Row className="application-row">
@@ -26,7 +25,7 @@ const JobApplicationCard = ( {job} ) => {
                                 <div className="application-col light-blue">{job.role}</div>
                                 <div className="application-col light-blue">
                                     <Row>
-                                        <Col><img className="contact-pic" src="https://avada.theme-fusion.com/wp-content/uploads/2019/07/person_sample_2.jpg"/></Col>
+                                        <Col><img className="contact-pic" src="https://avada.theme-fusion.com/wp-content/uploads/2019/07/person_sample_2.jpg" alt="contact"/></Col>
                                         <Col>{job.contact}</Col>
                                     </Row>
                                 </div>
@@ -34,7 +33,12 @@ const JobApplicationCard = ( {job} ) => {
                                 <div className="application-col light-blue">{job.notes}</div>
                             </Row>
              
-            <Link to={`/applications/${job.id}/edit`}>Edit</Link>
+            <div className="edit-btn"> 
+                <Link to={`/applications/${job.id}/edit`}>Edit</Link>
+            </div>
+            {/* <div className="list-btn"> 
+                <Link to="/profile">Go back to my applications</Link>
+            </div> */}
         
         </Container> :
         <p> This is Your Card With No Application </p>
